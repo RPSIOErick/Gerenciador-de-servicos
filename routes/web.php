@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Servico;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    $meuPrimeiroServico = new Servico;
+    $meuPrimeiroServico->nome = "Pintura";
+    $meuPrimeiroServico->telefone = "(11) 9002-8922";
+    $meuPrimeiroServico->origem = "Telefone Pessoal";
+    $meuPrimeiroServico->data = "2023-03-14";
+    $meuPrimeiroServico->observacao = "Não há nenhuma observação.";
+    $meuPrimeiroServico->save();
+
     return view('index');
 });
